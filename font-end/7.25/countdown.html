@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown</title>
+<style>
+    body{
+        cursor: default;
+        user-select: none;
+        cursor: default;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        background-image: linear-gradient(35deg,pink 40px,transparent 0);
+        background-size: 12vw 14vh;
+    }
+    .box{
+        width: 50vw;
+        margin-left: 24vw;
+        margin-top: 30vh;
+        /* background-color:pink; */
+        text-align: center;
+        border-radius: 3vw;
+        border-style: outset;
+        border-color: rgb(231, 118, 137) ;
+        box-shadow: 1vw 2vh rgb(231, 118, 137);
+        border-width: 1.5vw;
+        background: linear-gradient(235deg,red ,pink ,rgb(240, 187, 62));
+    }
+    .box>h1{
+        font-size: 6vw;
+        color: rgb(239, 239, 239);
+
+        box-shadow: 0 3px rgb(184, 39, 39);
+        text-shadow: 2px 2px black;
+
+    }
+    
+    .time{
+        font-size: 4vw;
+        color: rgb(238, 238, 238);
+        text-shadow: 2px 2px black;
+
+    }
+</style>
+</head>
+<body>
+    <div class="box">
+        <h1>距离世界毁灭还有</h1>
+        <div>
+            <h2 class="time"></h2>
+        </div>
+    </div>
+</body>
+<script>
+    countdown()
+    function zerodeal(num){
+        return num<10?"0"+num:num+""
+    }
+    function countdown(){
+        var nowtime=new Date()
+        var endtime=new Date(2022,8,3)
+        var lefttime=endtime.getTime()-nowtime.getTime()
+        var d=parseInt(lefttime/(24*60*60*1000))
+        var h=parseInt(lefttime/(60*60*1000)%24)
+        var m=parseInt(lefttime%(60*1000*60)/(1000*60))
+        var s=parseInt(lefttime%(1000*60)/1000)
+        d=zerodeal(d)
+        h=zerodeal(h)
+        m=zerodeal(m)
+        s=zerodeal(s)
+        document.getElementsByClassName("time")[0].innerHTML=`${d}天${h}小时${m}分${s}秒`
+        setTimeout(countdown,1000)
+    }
+    
+</script>
+</html>
