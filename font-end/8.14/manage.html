@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            min-width: 1000px;
+            max-width: 100%;
+        }
+        h2{
+            display: inline-block;
+        }
+        h3{
+            display: inline-block;
+        }
+        button{
+            display: none;
+        }
+        .adddish{
+            display:none;
+        }
+        .adduser{
+            display: none;
+        }
+        .selection>div{
+            width: 30%;
+            font-size: 30px;
+            padding-top: 1vh;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            display: inline-block;
+        }
+        .selection{
+            background-color: pink;
+            height: 5vh;
+        }
+        .dishesitems{
+            background-color: pink;
+            height: 85vh;
+            overflow-y: scroll;
+        }
+        .dishesitems>div:nth-of-type(odd){
+            background-color: rgb(238,238,238);
+        }
+        .dishesitems>div:nth-of-type(even){
+            background-color: rgb(249,249,249);
+        }
+        .dishlist>div:nth-child(2){
+            height: 5vh;
+            text-align: center;
+            background-color: pink;
+        }
+        .dishlist input{
+            width: 10%;
+            height: 80%;
+        }
+        .dishesitems>div>input{
+
+            display: none;
+        }
+        .dishesitems>div>h2{
+            width: 30%;
+        }
+        .userlist{
+            display: none;
+        }
+        .usersitems>div>h2{
+            width: 30%;
+        }
+        .userlist>div:nth-child(2){
+            height: 5vh;
+            text-align: center;
+            background-color: pink;
+        }
+        
+        .usersitems{
+            background-color: pink;
+            height: 85vh;
+            overflow-y: scroll;
+        }
+        .usersitems>div:nth-of-type(odd){
+            background-color: rgb(238,238,238);
+        }
+        .usersitems>div:nth-of-type(even){
+            background-color: rgb(249,249,249);
+        }
+        .userlist input{
+            width: 10%;
+            height: 80%;
+
+        }
+        .usersitems>div>input{
+
+            display: none;
+        }
+        .adddish{
+            background-color: pink;
+            height: 60vh;
+            font-size: 30px;
+            text-align: center;
+            padding-top: 30vh;
+        }
+        .adduser{
+            background-color: pink;
+            height: 60vh;
+            font-size: 30px;
+            text-align: center;
+            padding-top: 30vh;
+        }
+        .adddish>input[type="button"]{
+            height: 10%;
+            width: 10%;
+        }
+        .adduser>input[type="button"]{
+            height: 10%;
+            width: 10%;
+        }
+        .adddish>input[type="text"]{
+            width: 20%;
+            height: 8%;
+        }
+        .adduser>input[type="text"]{
+            width: 20%;
+            height: 8%;
+        }
+        #select{
+            background-color: rgb(242, 160, 173);
+        }
+        #unselect{
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="selection">
+            <div id="select">菜品管理</div>
+            <div id="unselect">客户管理</div>
+            <div></div>
+        </div>
+        <div class="dishlist">
+            
+            <div class="dishesitems">
+
+            </div>
+            <div class="selection_">
+                <input type="button" value="修改" onclick="change_dish()">
+                <input type="button" value="取消" style="display: none;" onclick="change_dish_back()">
+                <input type="button" value="新增菜品" onclick="add_dish()">
+            </div>
+        </div>
+        <div class="userlist">
+            <div class="usersitems">
+                
+            </div>
+            <div class="selection_">
+                <input type="button" value="修改" onclick="change_user()">
+                <input type="button" value="取消" style="display: none;" onclick="change_user_back()">
+                <input type="button" value="新建客户" onclick="add_user()">
+            </div>
+        </div>
+        <div class="adddish">
+            菜名:<input type="text"><br>
+            价格:<input type="text"><br>
+            <input type="button" value="返回"onclick="add_dish_back()">
+            <input type="button" value="确定" onclick="add_dish_post()">
+
+        </div>
+        <div class="adduser">
+            用户名:<input type="text"><br>
+            密码:<input type="text"><br>
+            管理员账户:<input type="checkbox"><br>
+            <input type="button" value="返回" onclick="add_user_back()">
+            <input type="button" value="确定" onclick="add_user_post()">
+
+        </div>
+    </div>
+</body>
+<script src="post.js"></script>
+<script src="manage.js"></script>
+</html>

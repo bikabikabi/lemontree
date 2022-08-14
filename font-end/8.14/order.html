@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>order</title>
+    <style>
+        body{
+            max-width: 100%;
+            min-width: 1000px;
+        }
+
+        h2{
+            display: inline-block;
+        }
+        .selection>div{
+            width: 30%;
+            font-size: 30px;
+            padding-top: 1vh;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            display: inline-block;
+        }
+        .selection{
+            background-color: pink;
+            height: 5vh;
+        }
+        .selected{
+
+            display: none;
+        }
+        .selected>div:nth-child(2){
+            text-align: center;
+            background-color: pink;
+        }
+        .selected>div:nth-child(2)>input{
+            width: 100px;
+            height: 5vh;
+        }
+        .items{
+            overflow-y: scroll;
+            height: 85vh;
+
+            background-color: pink;
+        }
+        .items>div>h2{
+            width: 40%;
+        }
+        .items>div>button{
+            width: 5%;
+        }
+        .items>div:nth-of-type(odd){
+            background-color: rgb(238,238,238);
+        }
+        .items>div:nth-of-type(even){
+            background-color: rgb(249,249,249);
+        }
+        .dishesitems{
+      
+            overflow-y: scroll;
+            height: 90vh;
+            background-color: pink;
+        }
+        .dishesitems>div>button{
+            width: 5%;
+        }
+        .dishesitems>div>h2{
+            margin-bottom: 0;
+            width: 40%;
+        }
+        .dishesitems>div:nth-of-type(odd){
+            background-color: rgb(238,238,238);
+        }
+        .dishesitems>div:nth-of-type(even){
+            background-color: rgb(249,249,249);
+        }
+        .history{
+            background-color: pink;
+            overflow-y: scroll;
+            display: none;
+            height: 90vh;
+        }
+        .history>div{
+            border-bottom: 10px;
+        }
+        .history>div>div>h2{
+            width: 40%;
+        }
+        .history>div:nth-of-type(odd){
+            background-color: rgb(238,238,238);
+        }
+        .history>div:nth-of-type(even){
+            background-color: rgb(249,249,249);
+        }
+        #select{
+            background-color: rgb(242, 160, 173);
+        }
+        #unselect{
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <div class="selection">
+            <div id="select">全部菜品</div>
+            <div id="unselect">订单</div>
+            <div id="unselect">历史订单</div>
+        </div>
+        <div class="dishesitems"></div>
+        <div class="selected">
+            <div class="items"></div>
+            <div>
+                <input type="button" value="确认订单" onclick="ensure_order()">
+                <input type="button" value="清空" onclick="clear_order()">
+            </div>
+        </div>
+        <div class="history"></div>
+    </div>
+</body>
+<script src="post.js"></script>
+<script src="order.js"></script>
+</html>
